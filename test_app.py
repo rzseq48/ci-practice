@@ -1,5 +1,6 @@
-from app import get_status_code
+from app import app
 
 
-def test_get_status_code():
-    assert get_status_code() == 201
+def test_home():
+    response = app.test_client().get("/")
+    assert response.status_code == 200
